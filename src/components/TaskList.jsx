@@ -2,14 +2,17 @@ import React, { useContext } from 'react';
 import notesContext from '../context/notesContext';
 
 function TaskList () {
-  const { notes } = useContext(notesContext);
+  const { notes, removeNote } = useContext(notesContext);
   return (
     <div>
       <ul>
         {
-          notes.map((note, index) => (
-            <li key={index}>
-              {note.task}
+          notes.map(({ task, id }) => (
+            <li 
+            onDoubleClick = {() => removeNote(id)}
+            key={id}
+            >
+              {task}
             </li>
           ))
         }
