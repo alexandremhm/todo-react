@@ -1,20 +1,55 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import notesContext from '../context/notesContext';
+import '../styles/taskSelected.css';
 
 function TaskList () {
-  const { notes, removeNote } = useContext(notesContext);
+  const { setNotes, notes, selectedNote, setSelectedNote, done } = useContext(notesContext);
+  const [taskId, setTaskId] = useState(null);
+  const [taskText, setTaskText] = useState('');
+
+  const handleSaveEdit = () => {
+    setNotes(
+      notes.map((note) => {
+        if (note.id === taskId) {
+          const editedNote = note;
+          editedNote.task = taskText;
+          return editedNote;
+        }
+        return note;
+      })            
+    );
+    setTaskId(null);
+  }
+
+
   return (
     <div>
       <ul>
         {
-          notes.map(({ task, id }) => (
+          notes.map(({ task, id }) => {
+            return taskId === id ? (
+              <>
+                <input 
+                  type="text" 
+                  value={ taskText }
+                  onChange={ e => setTaskText(e.target.value) }
+                  />
+                <button onClick={ () => {
+                  handleSaveEdit();
+                } }>Save</button>
+              </ >
+            ) : (
             <li 
-            onDoubleClick = {() => removeNote(id)}
+            className={`${selectedNote === id ? 'selected' : '' } ${ done.includes(id) ? 'done' : ''}`}
+            onClick = {() => { selectedNote === id ? setSelectedNote(null) : setSelectedNote(id)}}
             key={id}
             >
               {task}
-            </li>
-          ))
+              <button onClick={ () => { setTaskId(id); setTaskText(task);}}>Edit</button>
+            </li>)
+          }
+          
+          )
         }
       </ul>
     </div>
