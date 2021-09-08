@@ -1,0 +1,8 @@
+.selected {
+  background-color: #4CAF50;
+  width: fit-content;
+}
+
+.done {
+  text-decoration: line-through;
+}
