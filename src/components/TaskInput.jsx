@@ -7,6 +7,7 @@ function TaskInput() {
     task: '',
     id: 0,
     done: false,
+    type: '',
   });
 
   return (
@@ -19,11 +20,20 @@ function TaskInput() {
           task: event.target.value,
           id: Date.now(),
           done: false,
+          type: '',
         }) } }
       />
+        <label>work</label>
+        <input type="radio" name="type-task" onChange={() => setTask({...task, type: "work"}) } />
+        <label>home</label>
+        <input type="radio" name="type-task" onChange={() => setTask({...task, type: "home"}) } />
+        <label>school</label>
+        <input type="radio" name="type-task" onChange={() => setTask({...task, type: "school"}) } />
       <button onClick={() => { addNote(task); setTask({
         task: '',
         id: 0,
+        done: false,
+        type: '',
       }); } }>Add Task</button>
     </div>
   );

@@ -17,7 +17,7 @@ function TaskList () {
           notes.map((note, index) => (
             <div key={index}>              
               <li className={ note.done ? 'done-task' : 'not-done-task' }>
-                {note.task}
+                {`Task: ${note.task} - Type: ${note.type}`}
               </li>
               { editNote.id === note.id && <div> <input type="text" value={editNote.task} onChange={(e) => setEditNote({...editNote, task: e.target.value})} /> <button onClick={() => saveEditedNote(editNote.id, editNote.task)}>Save</button> </div> }
               <button onClick={() => removeNote(note.id)}>
@@ -30,7 +30,7 @@ function TaskList () {
                 { note.done ? 'Undo' : 'Done' }
               </button>
             </div>
-          ))
+          ))         
         }
       </ul>
     </div>
