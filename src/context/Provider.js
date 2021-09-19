@@ -5,6 +5,7 @@ function Provider ({ children }) {
 
   const [notes, setNotes] = useState([]);
   const [editNote, setEditNote] = useState(false);
+  const [done, setDone] = useState(false);
 
   const addNote = (note) => {
     setNotes([...notes, note]);
@@ -19,6 +20,11 @@ function Provider ({ children }) {
     setEditNote(false);
   };
 
+  const handleTaskDoneStatus = (id) => {
+    setNotes(notes.map(note => note.id === id ? { ...note, done: !note.done } : note));
+    setDone(!done);
+  };
+
   const state = {
     notes,
     setNotes,
@@ -27,6 +33,7 @@ function Provider ({ children }) {
     saveEditedNote,
     editNote,
     setEditNote,
+    handleTaskDoneStatus,
   };
   
   return (

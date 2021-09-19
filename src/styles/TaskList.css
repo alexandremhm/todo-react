@@ -1,0 +1,7 @@
+.not-done-task {
+  text-decoration: none;
+}
+
+.done-task {
+  text-decoration: line-through;
+}

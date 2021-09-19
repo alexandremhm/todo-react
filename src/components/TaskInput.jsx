@@ -6,6 +6,7 @@ function TaskInput() {
   const [task, setTask] = useState({
     task: '',
     id: 0,
+    done: false,
   });
 
   return (
@@ -17,6 +18,7 @@ function TaskInput() {
         onChange={ (event) => { setTask({
           task: event.target.value,
           id: Date.now(),
+          done: false,
         }) } }
       />
       <button onClick={() => { addNote(task); setTask({

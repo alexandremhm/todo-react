@@ -1,14 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import notesContext from '../context/notesContext';
+import '../styles/TaskList.css';
 
 function TaskList () {
-  const { notes, removeNote, saveEditedNote, editNote, setEditNote } = useContext(notesContext);
+  const { notes, removeNote, saveEditedNote, editNote, setEditNote, handleTaskDoneStatus } = useContext(notesContext);
 
   const editNoteController = (note) => {
     const noteToEdit = notes.find(({ id }) => id === note.id);
     setEditNote(noteToEdit);
   };
-
 
   return (
     <div>
@@ -16,7 +16,7 @@ function TaskList () {
         {
           notes.map((note, index) => (
             <div key={index}>              
-              <li>
+              <li className={ note.done ? 'done-task' : 'not-done-task' }>
                 {note.task}
               </li>
               { editNote.id === note.id && <div> <input type="text" value={editNote.task} onChange={(e) => setEditNote({...editNote, task: e.target.value})} /> <button onClick={() => saveEditedNote(editNote.id, editNote.task)}>Save</button> </div> }
@@ -25,6 +25,9 @@ function TaskList () {
               </button>
               <button onClick={() => editNoteController(note)}>
                 Edit
+              </button>
+              <button onClick={() => handleTaskDoneStatus(note.id)}>
+                { note.done ? 'Undo' : 'Done' }
               </button>
             </div>
           ))
