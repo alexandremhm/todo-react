@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+  .task-big-container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  
+}
