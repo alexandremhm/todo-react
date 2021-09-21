@@ -15,35 +15,35 @@ function TaskList () {
       <ul>
         { filteredType === 'all' ?
           notes.map((note, index) => (
-            <div key={index}>              
+            <div key={index} className="task-list-container">              
               <li className={ note.done ? 'done-task' : 'not-done-task' }>
-                {`Task: ${note.task} - Type: ${note.type}`}
+                {`${note.task} - ${note.type}`}
               </li>
-              { editNote.id === note.id && <div> <input type="text" value={editNote.task} onChange={(e) => setEditNote({...editNote, task: e.target.value})} /> <button onClick={() => saveEditedNote(editNote.id, editNote.task)}>Save</button> </div> }
-              <button onClick={() => removeNote(note.id)}>
+              { editNote.id === note.id && <div className="extra-edit-container"> <input id="extra-edit-input" type="text" value={editNote.task} onChange={(e) => setEditNote({...editNote, task: e.target.value})} /> <button id="extra-edit-btn" onClick={() => saveEditedNote(editNote.id, editNote.task)}>Save</button> </div> }
+              <button className="btn-task-list" id="delete-btn" onClick={() => removeNote(note.id)}>
                 Delete
               </button>
-              <button onClick={() => editNoteController(note)}>
+              <button className="btn-task-list" id="edit-btn" onClick={() => editNoteController(note)}>
                 Edit
               </button>
-              <button onClick={() => handleTaskDoneStatus(note.id)}>
+              <button className="btn-task-list" id={ `${note.done}-btn` } onClick={() => handleTaskDoneStatus(note.id)}>
                 { note.done ? 'Undo' : 'Done' }
               </button>
             </div>
           ))
           : filteredTypeTasks.map((note, index) => (
-            <div key={index}>
+            <div className="task-list-container" key={index}>
               <li className={ note.done ? 'done-task' : 'not-done-task' }>
                 {`Task: ${note.task} - Type: ${note.type}`}
               </li>
-              { editNote.id === note.id && <div> <input type="text" value={editNote.task} onChange={(e) => setEditNote({...editNote, task: e.target.value})} /> <button onClick={() => saveEditedNote(editNote.id, editNote.task)}>Save</button> </div> }
-              <button onClick={() => removeNote(note.id)}>
+              { editNote.id === note.id && <div className="extra-edit-container" > <input id="extra-edit-input" type="text" value={editNote.task} onChange={(e) => setEditNote({...editNote, task: e.target.value})} /> <button  id="extra-edit-btn" onClick={() => saveEditedNote(editNote.id, editNote.task)}>Save</button> </div> }
+              <button className="btn-task-list" id="delete-btn" onClick={() => removeNote(note.id)}>
                 Delete
               </button>
-              <button onClick={() => editNoteController(note)}>
+              <button className="btn-task-list" id="edit-btn" onClick={() => editNoteController(note)}>
                 Edit
               </button>
-              <button onClick={() => handleTaskDoneStatus(note.id)}>
+              <button className="btn-task-list" id={ `${note.done}-btn` } onClick={() => handleTaskDoneStatus(note.id)}>
                 { note.done ? 'Undo' : 'Done' }
               </button>
             </div>

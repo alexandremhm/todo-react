@@ -1,0 +1,82 @@
+@media screen and (max-width: 768px) {
+  #inputs-radio-tasks {
+    padding: 15px;
+    background-color: aliceblue !important;  
+
+  }
+  .input-label {
+    padding: 5px;
+    font-size: 1.1rem;
+    background-color: aliceblue !important;  
+
+  }
+  .task-input-text-container {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue !important;  
+
+  }
+  .task-text-input {
+    height: 35px;
+    width: 230px;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+
+  .task-save-button {
+    padding: 8px;
+    margin-left: 15px;
+    font-size: 1.1rem;
+  }
+
+  #other-text-input {
+    height: 25px;
+    width: 200px;
+    font-size: 1.1rem;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;  
+
+  }
+
+  #other-save-button {
+    padding: 8px;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    background-color: #A1B5FF;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .other-save {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    margin-right: 10px;
+    transition: 0.7s;
+    font-size: 1.1rem;
+    border: none;
+    background-color: aliceblue !important;
+  }
+
+  .task-save-button {
+    padding: 8px;
+    margin-left: 15px;
+    font-size: 1.1rem;
+    background-color: #A1B5FF;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .task-input {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: aliceblue !important;  
+    margin-bottom: 20px;
+  }
+}
