@@ -3,7 +3,7 @@
 ## Descrição do Projeto
 
 <p>Uma lista de tarefas feita usando React e Context API.</p>
-<h1 align="center">  <a href="https://albertoscandido.github.io/to-do-list/">🔗 Link do projeto</a>  </h1>  <p align="center">🚀 #VQV</p>
+<h1 align="center">  <a href="https://alexandremhm.github.io/todo-react/">🔗 Link do projeto</a>  </h1>  <p align="center">🚀 #VQV</p>
 
 
 # Sumário
