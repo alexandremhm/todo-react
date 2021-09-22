@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# to-do-list
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição do Projeto
 
-## Available Scripts
+<p>Uma lista de tarefas feita usando React e Context API.</p>
+<h1 align="center">  <a href="https://albertoscandido.github.io/to-do-list/">🔗 Link do projeto</a>  </h1>  <p align="center">🚀 #VQV</p>
 
-In the project directory, you can run:
 
-### `npm start`
+# Sumário
+<p align="center">  <a href="#objetivos">Objetivos</a> •  <a href="#tecnologias">Tecnologias</a>  • <a href="#desenvolvedor">Desenvolvedor</a>  </p>
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Demonstração da aplicação
+<br/>
+<img src="./to-do-list.gif" />
+<br/>
+<br/>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Objetivos
+Esse projeto foi desenvolvido visando desenvolver uma lista de tarefas, utilizando duas ferramentas dentro do ecossistema React: Hooks e Context API! Nesse app é possível adicionar, finalizar e deletar tarefas em uma lista que permanece dados mesmo após recarregar a página por meio do localStorage!
 
-### `npm test`
+O layout é foi pensado de forma responsiva para se adaptar a diferentes telas.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Tecnologias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- <a href="https://pt-br.reactjs.org/docs/getting-started.html">React</a>
+- Hooks
+- <a href="https://pt-br.reactjs.org/docs/context.html">Context API</a>
+- Css
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Habilidades
 
-### `npm run eject`
+- Utilizar Contex API para gerenciar estado
+- Utilizar o React Hook useState
+- Utilizar o React Hook useContext
+- Utilizar o React Hook useEffect
+- Criar Hooks customizados
+- Guardar informações no localStorage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br/>
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##  Pré-requisitos e como rodar a aplicação
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:  
+[Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/).  
+Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-## Learn More
+Clone o repositório
+Após clonar o repositório é necessário rodar o seguinte comando via terminal para baixar suas dependências:
+> ``` npm install ```
+E para inicializar a aplicação rode o comando
+> ``` npm start ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Desenvolvedor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a href="https://github.com/alexandremhm">**Matheus Alexandre**</a>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
