@@ -10,11 +10,11 @@
 <p align="center">  <a href="#objetivos">Objetivos</a> •  <a href="#tecnologias">Tecnologias</a>  • <a href="#desenvolvedor">Desenvolvedor</a>  </p>
 <br/>
 
-## Demonstração da aplicação
+<!-- ## Demonstração da aplicação
 <br/>
 <img src="./to-do-list.gif" />
 <br/>
-<br/>
+<br/> -->
 
 ## Objetivos
 Esse projeto foi desenvolvido visando desenvolver uma lista de tarefas, utilizando duas ferramentas dentro do ecossistema React: Hooks e Context API! Nesse app é possível adicionar, finalizar e deletar tarefas em uma lista que permanece dados mesmo após recarregar a página por meio do localStorage!
