@@ -57,20 +57,21 @@ describe('testing the page taskFilter', () => {
     expect(taskList2).toHaveTextContent(textValue2);
 
     fireEvent.click(schoolFilter);
-    expect(taskList).toBeInTheDocument();
-    expect(taskList).toHaveTextContent(textValue);
+    const filteredTaskList = myPage.getByTestId('ft-task-1');
+    expect(filteredTaskList).toBeInTheDocument();
+    expect(filteredTaskList).toHaveTextContent(textValue);
     expect(taskList2).not.toBeInTheDocument();
 
     fireEvent.click(homeFilter);
     expect(homeFilter).toBeChecked();
-    expect(taskList).toBeInTheDocument();
-    expect(taskList).toHaveTextContent(textValue2);
+    expect(filteredTaskList).toBeInTheDocument();
+    expect(filteredTaskList).toHaveTextContent(textValue2);
     expect(taskList2).not.toBeInTheDocument();
 
     fireEvent.click(allFilter);
     expect(allFilter).toBeChecked();
-    expect(taskList).toBeInTheDocument();
-    expect(taskList).toHaveTextContent(textValue);
+    expect(filteredTaskList).toBeInTheDocument();
+    expect(filteredTaskList).toHaveTextContent(textValue);
     expect(taskList2).toHaveTextContent(textValue2);
   });
 });
@@ -127,6 +128,11 @@ describe('test taskList', () => {
     fireEvent.click(saveEditBtn);
     expect(taskList).toHaveTextContent(newTextValue);
 
+    const doneTask = myPage.getByTestId('done-btn');
+    fireEvent.click(doneTask);
+    const undoTask = myPage.getByTestId('undo-btn');
+    fireEvent.click(undoTask);
+
     const deleteBtn = 'delete-btn-task';
     expect(myPage.getByTestId(deleteBtn)).toBeInTheDocument();
     fireEvent.click(myPage.getByTestId(deleteBtn));
@@ -143,23 +149,34 @@ describe('test taskList', () => {
     fireEvent.change(textInput, { target: { value: textValue } });
     fireEvent.click(schoolType);
     fireEvent.click(saveBtn);
-
+     
+    const schoolFilter = myPage.getByTestId('school-filter');
+    fireEvent.click(schoolFilter);
     
-    const taskList = myPage.getByTestId('task-1');
+    const taskList = myPage.getByTestId('ft-task-1');
     expect(taskList).toBeInTheDocument();
+    expect(taskList).toHaveTextContent(textValue);
 
     const editBtn = myPage.getByTestId('ft-edit-btn-task');
-    expect(taskList).toHaveTextContent(textValue);
     fireEvent.click(editBtn);
+
 
     const textEditInput = 'ft-edit-text-task';
     expect(myPage.getByTestId(textEditInput)).toBeInTheDocument();
 
-    const newTextValue = 'ft-new text';
-    fireEvent.change(myPage.getByTestId(textEditInput), { target: { value: newTextValue } });
-    const saveEditBtn = myPage.getByTestId('ft-save-btn-task');
+    const newTextValue = 'new text';
+    fireEvent.change(myPage.getByTestId(textEditInput), { target: { value: newTextValue } });  
+
+    const saveEditBtn = myPage.getByTestId('ft-save-btn-task');    
     fireEvent.click(saveEditBtn);
-    expect(taskList).toHaveTextContent(newTextValue);
+
+    const newTaskList = myPage.getByTestId('ft-task-1');
+    expect(newTaskList).toHaveTextContent(newTextValue);
+
+    const doneTask = myPage.getByTestId('ft-done-btn');
+    fireEvent.click(doneTask);
+    const undoTask = myPage.getByTestId('ft-undo-btn');
+    fireEvent.click(undoTask);
 
     const deleteBtn = 'ft-delete-btn-task';
     expect(myPage.getByTestId(deleteBtn)).toBeInTheDocument();
