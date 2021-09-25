@@ -45,8 +45,10 @@ function TaskInput() {
             type: '',
           }) } }
           className="task-text-input"
+          data-testid="text-input"
         />
-          <button 
+          <button
+            data-testid="add-task-button"
             className="task-save-button"
             onClick={() => { addNote(task); setTask({
             task: '',
@@ -57,17 +59,17 @@ function TaskInput() {
       </div>
       <section id="inputs-radio-tasks">
         <label className="input-label">work</label>
-        <input type="radio" name="type-task" onChange={() => { setTask({...task, type: "work"}); handleOtherState() } } />
+        <input data-testid="work-type" type="radio" name="type-task" onChange={() => { setTask({...task, type: "work"}); handleOtherState() } } />
         <label className="input-label">home</label>
-        <input type="radio" name="type-task" onChange={() => { setTask({...task, type: "home"}); handleOtherState() }} />
+        <input data-testid="home-type" type="radio" name="type-task" onChange={() => { setTask({...task, type: "home"}); handleOtherState() }} />
         <label className="input-label">school</label>
-        <input type="radio" name="type-task" onChange={() => { setTask({...task, type: "school"}); handleOtherState() } } />
+        <input data-testid="school-type" type="radio" name="type-task" onChange={() => { setTask({...task, type: "school"}); handleOtherState() } } />
         <label className="input-label">other</label>
-        <input type="radio" name="type-task" onChange={() => setOther(true) } />
+        <input data-testid="other-type" type="radio" name="type-task" onChange={() => setOther(true) } />
         {other && (
           <div className="other-save">
-            <input id="other-text-input" type="text" placeholder="Enter type" value={otherType} onChange={(e) => handleOtherType(e)} />
-            <button id="other-save-button" onClick={handleOtherTypeSave}>Save</button>
+            <input data-testid="text-other-input" id="other-text-input" type="text" placeholder="Enter type" value={otherType} onChange={(e) => handleOtherType(e)} />
+            <button data-testid="btn-other-input" id="other-save-button" onClick={handleOtherTypeSave}>Save</button>
           </div>
         )}
       </section>
