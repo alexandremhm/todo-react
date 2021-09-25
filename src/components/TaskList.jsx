@@ -3,7 +3,17 @@ import notesContext from '../context/notesContext';
 import '../styles/TaskList.css';
 
 function TaskList () {
-  const { notes, removeNote, saveEditedNote, editNote, setEditNote, handleTaskDoneStatus, filteredTypeTasks, filteredType, typeTaskFilter} = useContext(notesContext);
+  const {
+    notes,
+    removeNote, 
+    saveEditedNote, 
+    editNote, 
+    setEditNote, 
+    handleTaskDoneStatus, 
+    filteredTypeTasks, 
+    filteredType, 
+    typeTaskFilter
+  } = useContext(notesContext);
 
   const editNoteController = (note) => {
     const noteToEdit = notes.find(({ id }) => id === note.id);
@@ -11,8 +21,7 @@ function TaskList () {
   };
 
   return (
-    <div>
-      <ul>
+    <div className="task-list-big">
         { filteredType === 'all' ?
           notes.map((note, index) => (
             <div key={index} className="task-list-container">              
@@ -49,7 +58,6 @@ function TaskList () {
             </div>
           ))   
         }
-      </ul>
     </div>
   );
 }

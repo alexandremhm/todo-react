@@ -2,11 +2,12 @@
 
 * {
   font-family: 'Roboto', sans-serif;
+  background-color: #705E78;
 }
 
 @media screen and (max-width: 768px) {
   * {
-    background-color: #FFE9C6;
+    background-color: #705E78;
   }
   
 }
