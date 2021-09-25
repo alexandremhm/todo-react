@@ -1,3 +1,22 @@
+#filter-label {
+  font-size: 1.2rem;
+  padding: 5px;
+  background-color: aliceblue !important;
+}
+.task-filter-container {
+  border: 1px solid #ccc;
+  text-align: center;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: aliceblue !important;
+  width: 30vw;
+  margin-top: 20px;
+}
+
+.task-filter-container h3 {
+  background-color: aliceblue !important;
+}
+
 @media screen and (max-width: 768px) {
   #filter-label {
     font-size: 1.2rem;
@@ -10,6 +29,7 @@
     padding-bottom: 20px;
     border-radius: 8px;
     background-color: aliceblue !important;
+    width: 90vw;
   }
 
   .task-filter-container h3 {

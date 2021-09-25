@@ -2,7 +2,6 @@ import { render, fireEvent } from '@testing-library/react';
 import App from '../App';
 import Header from '../components/Header';
 
-
 describe('testing the page header', () => {
   it('should render the page header', () => {
     const myPage = render(<Header />)
@@ -76,7 +75,7 @@ describe('testing the page taskFilter', () => {
   });
 });
 
-describe('test the other type', () => {
+describe('testing the other type', () => {
   it('test the other type', ()=> {
     const myPage = render(<App />);
     
@@ -98,7 +97,7 @@ describe('test the other type', () => {
   })
 })
 
-describe('test taskList', () => {
+describe('testing taskList', () => {
   it('taskList buttons should work correctly', () => {
     const myPage = render(<App />);
     
@@ -182,6 +181,5 @@ describe('test taskList', () => {
     expect(myPage.getByTestId(deleteBtn)).toBeInTheDocument();
     fireEvent.click(myPage.getByTestId(deleteBtn));
     expect(taskList).not.toBeInTheDocument();
-  })
-})
-
+  });
+});
