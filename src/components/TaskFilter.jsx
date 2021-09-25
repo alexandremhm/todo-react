@@ -10,13 +10,14 @@ function TaskFilter (props) {
     <div className="task-filter-container">
       <h3>Filter By:</h3>
       { types && types.map(type => (
-        <label id="filter-label">{type}
+        <label id="filter-label" key={type} >{type} 
           <input 
             type="radio" 
             name="type-task" 
             value={type} 
             onChange={() => typeTaskFilter(type)}
-            className="filter-input" 
+            className="filter-input"
+            data-testid={`${type}-filter`}
             />        
         </label>
       ))}

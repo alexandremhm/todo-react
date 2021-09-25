@@ -1,5 +1,5 @@
 import notesContext from './notesContext';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Provider ({ children }) {
 
@@ -29,9 +29,12 @@ function Provider ({ children }) {
   };
 
   const typeTaskFilter = (type) => {
-    setFilteredTypeTasks(notes.filter(note => note.type === type));
     setFilteredType(type);
   };
+
+  useEffect(() => {
+    setFilteredTypeTasks(notes.filter(note => note.type === filteredType));
+  }, [filteredType, notes])
   
   const state = {
     notes,
